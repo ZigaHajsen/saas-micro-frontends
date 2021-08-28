@@ -13,7 +13,7 @@ import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import { Link as RouterLink } from 'react-router-dom';
 
-function Copyright() {
+const Copyright = () => {
   return (
     <Typography variant='body2' color='textSecondary' align='center'>
       {'Copyright © '}
@@ -24,7 +24,7 @@ function Copyright() {
       {'.'}
     </Typography>
   );
-}
+};
 
 const useStyles = makeStyles((theme) => ({
   '@global': {
@@ -139,7 +139,7 @@ const footers = [
   },
 ];
 
-export default function Pricing() {
+export const Pricing = () => {
   const classes = useStyles();
 
   return (
@@ -251,4 +251,4 @@ export default function Pricing() {
       {/* End footer */}
     </React.Fragment>
   );
-}
+};
