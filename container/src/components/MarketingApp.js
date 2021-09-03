@@ -1,6 +1,6 @@
-import React, { useRef, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
-import { mount } from 'marketing/MarketingApp';
+import React, { useRef, useEffect } from "react";
+import { useHistory } from "react-router-dom";
+import { mount } from "marketing/MarketingApp";
 
 export const MarketingApp = () => {
   const ref = useRef(null);
@@ -8,6 +8,7 @@ export const MarketingApp = () => {
 
   useEffect(() => {
     const { onParentNavigate } = mount(ref.current, {
+      initialPath: history.location.pathname,
       onNavigate: ({ pathname: nextPathname }) => {
         const { pathname } = history.location;
 
