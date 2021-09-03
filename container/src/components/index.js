@@ -1,2 +1,2 @@
-export * from './MarketingApp';
 export * from './Header';
+export * from './Progress';
