@@ -1,14 +1,14 @@
-import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import {
   StylesProvider,
   createGenerateClassName,
-} from '@material-ui/core/styles';
+} from "@material-ui/core/styles";
 
-import { MarketingApp, Header } from './components';
+import { MarketingApp, AuthApp, Header } from "./components";
 
 const generateClassName = createGenerateClassName({
-  productionPrefix: 'co',
+  productionPrefix: "co",
 });
 
 export const App = () => {
@@ -16,7 +16,10 @@ export const App = () => {
     <StylesProvider generateClassName={generateClassName}>
       <BrowserRouter>
         <Header />
-        <MarketingApp />
+        <Switch>
+          <Route path="/auth" component={AuthApp} />
+          <Route path="/" component={MarketingApp} />
+        </Switch>
       </BrowserRouter>
     </StylesProvider>
   );

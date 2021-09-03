@@ -1,2 +1,3 @@
-export * from './MarketingApp';
-export * from './Header';
+export * from "./MarketingApp";
+export * from "./AuthApp";
+export * from "./Header";
