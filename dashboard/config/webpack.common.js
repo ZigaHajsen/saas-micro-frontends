@@ -1,3 +1,4 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
 
 module.exports = {
@@ -12,11 +13,7 @@ module.exports = {
     rules: [
       {
         test: /\.(png|jpe?g|gif|woff|svg|eot|ttf)$/i,
-        use: [
-          {
-            loader: 'file-loader',
-          },
-        ],
+        use: [{ loader: 'file-loader' }],
       },
       {
         test: /\.vue$/,
@@ -39,5 +36,10 @@ module.exports = {
       },
     ],
   },
-  plugins: [new VueLoaderPlugin()],
+  plugins: [
+    new VueLoaderPlugin(),
+    new HtmlWebpackPlugin({
+      template: './public/index.html',
+    }),
+  ],
 };
